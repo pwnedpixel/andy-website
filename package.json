@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "node server.js",
 		"ng": "ng",
-		"build": "ng build",
+		"build": "ng build --prod --base-href https://www.akeech.com/",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
