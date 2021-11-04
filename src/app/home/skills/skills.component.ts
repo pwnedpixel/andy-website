@@ -44,16 +44,16 @@ export class SkillsComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.skills.push(new Skill('HTML/JS/CSS', 5));
-		this.skills.push(new Skill('Angular', 4));
-		this.skills.push(new Skill('Python', 4));
-		this.skills.push(new Skill('Agile Development', 4));
-		this.skills.push(new Skill('Java', 3));
-		this.skills.push(new Skill('React', 3));
-		this.skills.push(new Skill('Git', 3));
-		this.skills.push(new Skill('AWS', 2));
-		this.skills.push(new Skill('Jenkins', 2));
-		this.skills.push(new Skill('C# & C++', 1));
+		this.skills.push(new Skill('Python', 5));
+    this.skills.push(new Skill('JavaScript/Typescript', 5));
+    this.skills.push(new Skill('Git', 4));
+    this.skills.push(new Skill('MongoDB', 4));
+    this.skills.push(new Skill('React', 3));
+    this.skills.push(new Skill('Kafka', 3));
+    this.skills.push(new Skill('Java', 3));
+    this.skills.push(new Skill('Maven', 2));
+    this.skills.push(new Skill('SQL', 2));
+    this.skills.push(new Skill('C# & C++', 1));
 	}
 
 }
