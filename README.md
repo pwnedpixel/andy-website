@@ -35,6 +35,12 @@ Unit tests use Angular's Vitest runner with jsdom. Browser tests use Playwright 
 
 ## Deployment
 
+Pushes to `master` automatically run lint, unit tests, browser tests, and the production build before publishing to GitHub Pages at https://www.akeech.com/. Pull requests run the same checks. To publish manually from GitHub, run **Build and deploy GitHub Pages** from the Actions tab with the `master` branch selected.
+
+In **Settings > Pages**, select **Deploy from a branch**, the `gh-pages` branch, and **/(root)**.
+
+To publish from a local checkout:
+
 ```sh
 npm run github-deploy
 ```
