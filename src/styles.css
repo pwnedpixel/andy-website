@@ -1,6 +1,6 @@
 @import "@angular/material/prebuilt-themes/purple-green.css";
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~font-awesome/css/font-awesome.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 body {
     background: rgb(255, 255, 255);
@@ -23,9 +23,16 @@ mat-card {
     margin-bottom: 20px;
 }
 
-.mat-card {
+mat-card.mat-mdc-card {
     background: rgb(255, 255, 255);
     color: rgb(66, 66, 66);
     border: none;
     box-shadow: none !important;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+}
+
+/* Material cards no longer add padding to their content automatically. */
+mat-card {
+    padding: 16px;
 }

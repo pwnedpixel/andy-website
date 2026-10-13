@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { SkillsComponent } from './skills.component';
 
 describe('SkillsComponent', () => {
-  let component: SkillsComponent;
   let fixture: ComponentFixture<SkillsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SkillsComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SkillsComponent]
+    }).compileComponents();
     fixture = TestBed.createComponent(SkillsComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('renders five rating circles per skill using the current icon classes', () => {
+    expect(fixture.nativeElement.querySelectorAll('.fa-circle')).toHaveLength(50);
+    expect(fixture.nativeElement.querySelectorAll('.fa-solid')).toHaveLength(32);
+    expect(fixture.nativeElement.querySelectorAll('.fa-regular')).toHaveLength(18);
   });
 });

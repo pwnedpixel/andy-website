@@ -13,9 +13,13 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/', (req,res) => {
-    res.send("Invalid page");
-})
+// Express 5 requires a named wildcard. Serve the app for client-side routes too.
+app.get('/{*path}', (req, res, next) => {
+    if (path.extname(req.path)) {
+        return next();
+    }
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Starting the server at port ${port}`);

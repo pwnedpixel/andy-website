@@ -4,24 +4,32 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="row" *ngFor="let skill of getSkills(0)">
+            @for (skill of getSkills(0); track skill.name) {
+            <div class="row">
                 <div class="col-md-6 d-flex justify-content-lg-end">
                     {{skill.name}}
                 </div>
                 <div class="col-md-6">
-                    <i *ngFor="let circle of skill.circles" class="fa fa-circle{{circle!=='1'?'-o':''}}"></i>
+                    @for (circle of skill.circles; track $index) {
+                    <i class="fa-circle" [class.fa-solid]="circle === '1'" [class.fa-regular]="circle !== '1'"></i>
+                    }
                 </div>
             </div>
+            }
         </div>
         <div class="col-md-6">
-            <div class="row" *ngFor="let skill of getSkills(1)">
+            @for (skill of getSkills(1); track skill.name) {
+            <div class="row">
                 <div class="col-md-6 d-flex justify-content-lg-end">
                     {{skill.name}}
                 </div>
                 <div class="col-md-6">
-                    <i *ngFor="let circle of skill.circles" class="fa fa-circle{{circle!=='1'?'-o':''}}"></i>
+                    @for (circle of skill.circles; track $index) {
+                    <i class="fa-circle" [class.fa-solid]="circle === '1'" [class.fa-regular]="circle !== '1'"></i>
+                    }
                 </div>
             </div>
+            }
         </div>
     </div>
 </div>
