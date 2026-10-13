@@ -1,6 +1,6 @@
 # Andy Website
 
-Website version of my resume, built with Angular 22.
+Website version of my resume.
 
 Use Node.js 24 LTS (`nvm use`) and npm 10 or newer. Angular also supports Node.js 22.22.3+ and 26+; see the version ranges in `package.json`.
 
@@ -39,12 +39,4 @@ Unit tests use Angular's Vitest runner with jsdom. Browser tests use Playwright 
 npm run github-deploy
 ```
 
-This builds the production site and publishes `dist/` to GitHub Pages with the existing custom domain. It requires GitHub authentication and should only be run when ready to publish.
-
-## Dependency compatibility
-
-Angular, CLI, build tooling, and Material/CDK are aligned at 22.2.2. TypeScript stays on 6.0.3 because Angular 22 requires `>=6.0 <6.1`; TypeScript 7 is not compatible yet. Other retained direct dependencies use their latest stable releases at upgrade time, with exact resolutions recorded in `package-lock.json`.
-
-Unused legacy packages (Angular HTTP, NgRx, IE polyfills, HammerJS, and Zone.js) were removed. Standalone components and signals replace the old module bootstrap and support zoneless rendering. ESLint, Vitest, and Playwright replace TSLint, Karma/Jasmine, and Protractor. Bootstrap 5 and Font Awesome 7 are supported by updated styles and icon classes. The site now follows Angular's supported modern browsers; Internet Explorer is no longer supported.
-
-The production dependency audit is clean. The latest `angular-cli-ghpages` deployment helper still pulls in `braces` 3.0.3, which has an unpatched denial-of-service advisory ([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)). `npm audit` reports six related high-severity findings along that development-only dependency chain. This helper is used only when publishing to GitHub Pages and is not included in the website bundle or Express runtime.
+This builds the production site and publishes `dist/` to GitHub Pages at https://www.akeech.com/. GitHub authentication is required.
