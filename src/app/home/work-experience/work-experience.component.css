@@ -1,12 +1,8 @@
 mat-card.mat-mdc-card {
+	max-width: 60rem;
+	margin-inline: auto;
 	font-size: 1rem;
 	line-height: 1.5;
-	text-align: center;
-}
-
-ul {
-	align-self: center;
-	max-width: 100%;
 	text-align: left;
 }
 
