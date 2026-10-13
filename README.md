@@ -1,10 +1,42 @@
 # Andy Website
+
 Website version of my resume.
 
-## Development server
+Use Node.js 24 LTS (`nvm use`) and npm 10 or newer. Angular also supports Node.js 22.22.3+ and 26+; see the version ranges in `package.json`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup and development
 
-## Build
+```sh
+npm ci
+npm run dev
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Open http://localhost:4200/. The app reloads when source files change.
+
+## Build and serve
+
+```sh
+npm run build
+npm start
+```
+
+The production build targets https://www.akeech.com/ and writes to `dist/`, which the Express server serves on port 3000 (or `PORT`). For local production testing, use `npm run build -- --base-href /` before starting the server.
+
+## Checks
+
+```sh
+npm run lint
+npm test
+npx playwright install chromium
+npm run e2e
+```
+
+Unit tests use Angular's Vitest runner with jsdom. Browser tests use Playwright and verify desktop and mobile rendering, project assets, links, and routing. If Chromium is already installed, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable instead of downloading a browser.
+
+## Deployment
+
+```sh
+npm run github-deploy
+```
+
+This builds the production site and publishes `dist/` to GitHub Pages at https://www.akeech.com/. GitHub authentication is required.

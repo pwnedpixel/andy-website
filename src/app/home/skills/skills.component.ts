@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 class Skill {
 	name: string;
 	level: number;
-	circles = [];
-	constructor(name, level) {
+	circles: string[] = [];
+	constructor(name: string, level: number) {
 		this.name = name;
+		this.level = level;
 		for (let i = 0; i < level; i++) {
 			this.circles.push('1');
 		}
@@ -24,13 +25,10 @@ export class SkillsComponent implements OnInit {
 
 	skills: Skill[] = [];
 
-	constructor() {
-	}
-
 	getSkills(column: number) {
-		const leftColumn = [];
-		const rightColumn = [];
-		const sortedSkills = this.skills.sort((sk1, sk2) => {
+		const leftColumn: Skill[] = [];
+		const rightColumn: Skill[] = [];
+		this.skills.sort((sk1, sk2) => {
 			return sk2.level - sk1.level;
 		});
 		for (let i = 0; i < this.skills.length; i++) {
