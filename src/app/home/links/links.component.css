@@ -7,8 +7,13 @@ a {
 }
 
 .breadcrumb {
+	justify-content: center;
 	background-color: transparent;
 	font-size: 1.2em;
 	padding: 0px;
 	margin: auto;
+}
+
+.breadcrumb-item {
+	white-space: nowrap;
 }
