@@ -19,7 +19,7 @@ describe('SkillsComponent', () => {
 
   it('renders five rating circles per skill using the current icon classes', () => {
     expect(fixture.nativeElement.querySelectorAll('.fa-circle')).toHaveLength(50);
-    expect(fixture.nativeElement.querySelectorAll('.fa-solid')).toHaveLength(32);
-    expect(fixture.nativeElement.querySelectorAll('.fa-regular')).toHaveLength(18);
+    expect(fixture.nativeElement.querySelectorAll('.fa-solid')).toHaveLength(40);
+    expect(fixture.nativeElement.querySelectorAll('.fa-regular')).toHaveLength(10);
   });
 });

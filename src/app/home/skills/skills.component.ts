@@ -28,9 +28,6 @@ export class SkillsComponent implements OnInit {
 	getSkills(column: number) {
 		const leftColumn: Skill[] = [];
 		const rightColumn: Skill[] = [];
-		this.skills.sort((sk1, sk2) => {
-			return sk2.level - sk1.level;
-		});
 		for (let i = 0; i < this.skills.length; i++) {
 			if (i < this.skills.length / 2) {
 				leftColumn.push(this.skills[i]);
@@ -43,15 +40,15 @@ export class SkillsComponent implements OnInit {
 
 	ngOnInit() {
 		this.skills.push(new Skill('Python', 5));
-    this.skills.push(new Skill('JavaScript/Typescript', 5));
-    this.skills.push(new Skill('Git', 4));
-    this.skills.push(new Skill('MongoDB', 4));
-    this.skills.push(new Skill('React', 3));
-    this.skills.push(new Skill('Kafka', 3));
-    this.skills.push(new Skill('Java', 3));
-    this.skills.push(new Skill('Maven', 2));
-    this.skills.push(new Skill('SQL', 2));
-    this.skills.push(new Skill('C# & C++', 1));
+		this.skills.push(new Skill('Databricks', 5));
+		this.skills.push(new Skill('Data Pipelines', 5));
+		this.skills.push(new Skill('Terraform', 4));
+		this.skills.push(new Skill('PySpark', 4));
+		this.skills.push(new Skill('SQL', 4));
+		this.skills.push(new Skill('Google Cloud', 4));
+		this.skills.push(new Skill('Postgres', 3));
+		this.skills.push(new Skill('Airflow', 3));
+		this.skills.push(new Skill('AWS', 3));
 	}
 
 }
